@@ -1,0 +1,28 @@
+/* 
+	This is where our own custom CSS will live 
+	in case we need to overwrite Bootstrap
+
+
+	colors to use 
+
+	yellow: #FDAB00
+	light green: #19FD95
+	purple: #7F09B0
+	light-blue: #3FB8FD
+	brownish-yellow: #B07D12
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+h1, h2, h3, h4, h5, h6, p, div {
+	font-family: 'Montserrat', sans-serif;
+}
+
+.jumbotron {
+	/* Override jumbotron background color */
+	background-color: #FDAB00 !important;
+}
+.header {
+	color: #000;
+	text-align: center;
+}
