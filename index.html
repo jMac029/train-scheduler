@@ -38,6 +38,101 @@
 
 	    </div>
 
+	    <!-- Main Content Area -->
+	    <div class="container">
+			<div class="card text-white bg-dark mb-3">
+			  	<div class="card-header">
+				    Train Schedule
+				</div>
+				<div class="card-body">
+					<table class="table table-striped table-dark">
+					  	<thead>
+						    <tr>
+						       	<th scope="col">Train #</th>
+						       	<th scope="col">Line</th>
+							    <th scope="col">Destination</th>
+							    <th scope="col">Frequency</th>
+							    <th scope="col">Next Arrival</th>
+							    <th scope="col">Minutes Away</th>
+							    <th scope="col">Platform #</th>
+						    </tr>
+					   	</thead>
+					  	   		<tbody>
+							    <tr>
+							      	<th scope="row">456</th>
+								    <td>Amsterdam Express</td>
+								    <td>Amsterdam</td>
+								    <td>20</td>
+								    <td>0830</td>
+								    <td>20</td>
+								    <td>9a</td>
+							    </tr>
+							    <tr>
+							      	<th scope="row">789</th>
+							      	<td>Roterdam Express</td>
+								    <td>Roterdam</td>
+								    <td>45</td>
+								    <td>0915</td>
+								    <td>20</td>
+								    <td>10a</td>
+							    </tr>
+							    <tr>
+								    <th scope="row">32</th>
+								    <td>Orient Express</td>
+								    <td>Istanbul</td>
+								    <td>1440</td>
+								    <td>1000</td>
+								    <td>90</td>
+								    <td>1a</td>
+							    </tr>
+							  </tbody>
+					</table>
+				    
+				</div>
+			</div>
+
+			<div class="card text-white bg-dark mb-3">
+			  	<div class="card-header">
+				    Add Train to Schedule
+				</div>
+				<div class="card-body">
+					<form>
+					  <div class="form-row">
+					    <div class="form-group col-md-6">
+					      <label for="train-number">Train #</label>
+					      <input type="number" class="form-control" id="train-humber" placeholder="123">
+					    </div>
+					    <div class="form-group col-md-6">
+					      <label for="train-line">Line</label>
+					      <input type="text" class="form-control" id="train-line" placeholder="Express">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label for="destination">Destination</label>
+					    <input type="text" class="form-control" id="destination" placeholder="City or Station Name">
+					  </div>
+					  <div class="form-row">
+					    <div class="form-group col-md-4">
+					      <label for="first-departure">First Departure</label>
+					      <input type="number" class="form-control" id="first-departure" placeholder="0800">
+					    </div>
+					    <div class="form-group col-md-4">
+					      <label for="frequency">Frequency</label>
+					      <input type="number" class="form-control" id="frequency" placeholder="30">
+					    </div>
+					    <div class="form-group col-md-4">
+					      <label for="platform">Platform</label>
+					      <input type="text" class="form-control" id="platform" placeholder="2a">
+					    </div>
+					  </div>
+					  <button type="submit" class="btn btn-primary">Add Train</button>
+					</form>
+					
+				</div>
+
+	    	
+	    </div>
+
 
 	</div>
 
