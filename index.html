@@ -41,7 +41,7 @@
 	    <!-- Main Content Area -->
 	    <div class="container">
 			<div class="card text-white bg-dark mb-3">
-			  	<div class="card-header">
+			  	<div class="card-header schedule-header">
 				    Train Schedule
 				</div>
 				<div class="card-body">
@@ -91,8 +91,9 @@
 				</div>
 			</div>
 
+			<!-- Form Field Area -->
 			<div class="card text-white bg-dark mb-3">
-			  	<div class="card-header">
+			  	<div class="card-header form-header">
 				    Add Train to Schedule
 				</div>
 				<div class="card-body">
@@ -100,7 +101,7 @@
 					  <div class="form-row">
 					    <div class="form-group col-md-6">
 					      <label for="train-number">Train #</label>
-					      <input type="number" class="form-control" id="train-humber" placeholder="123">
+					      <input type="number" class="form-control" id="train-number" placeholder="123">
 					    </div>
 					    <div class="form-group col-md-6">
 					      <label for="train-line">Line</label>
@@ -108,24 +109,24 @@
 					    </div>
 					  </div>
 					  <div class="form-group">
-					    <label for="destination">Destination</label>
-					    <input type="text" class="form-control" id="destination" placeholder="City or Station Name">
+					    <label for="train-destination">Destination</label>
+					    <input type="text" class="form-control" id="train-destination" placeholder="City or Station Name">
 					  </div>
 					  <div class="form-row">
 					    <div class="form-group col-md-4">
-					      <label for="first-departure">First Departure</label>
-					      <input type="number" class="form-control" id="first-departure" placeholder="0800">
+					      <label for="train-departure">First Departure (24hr format)</label>
+					      <input type="number" class="form-control" id="train-departure" placeholder="0800">
 					    </div>
 					    <div class="form-group col-md-4">
-					      <label for="frequency">Frequency</label>
-					      <input type="number" class="form-control" id="frequency" placeholder="30">
+					      <label for="train-frequency">Frequency (minutes)</label>
+					      <input type="number" class="form-control" id="train-frequency" placeholder="30">
 					    </div>
 					    <div class="form-group col-md-4">
-					      <label for="platform">Platform</label>
-					      <input type="text" class="form-control" id="platform" placeholder="2a">
+					      <label for="train-platform">Platform</label>
+					      <input type="text" class="form-control" id="train-platform" placeholder="2a">
 					    </div>
 					  </div>
-					  <button type="submit" class="btn btn-primary">Add Train</button>
+					  <button type="submit" class="btn button-add">Add Train</button>
 					</form>
 					
 				</div>
@@ -136,6 +137,8 @@
 
 	</div>
 
+	<!-- Firebase Link -->
+	<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
 
 	<!-- Link to jQuery CDN -->
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
