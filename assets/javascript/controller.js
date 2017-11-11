@@ -29,6 +29,7 @@
  			// clear all the fields in the form
  			$('.form-control').val("");
 
+ 			model.pushNewTrain();
  			view.updateTrainScheduleTable();
 
  		});

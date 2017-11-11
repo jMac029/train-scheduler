@@ -5,6 +5,7 @@
 $(document).ready(function(){
 
 	controller.captureFormFields();
+	model.pullDatabase();
 
 });
 
@@ -15,11 +16,6 @@ var view = {
 
 	updateTrainScheduleTable: () => {
 
-		// var trainScheduleBody = $('.train-schedule-body');
-		// var tableRow = $('<tr>');
-		// var tableRowHead = $('<th>').attr('scope', 'row');
-		// var tableData = $('<td>');
-
 		$('#train-schedule-body').append(
 			'<tr>'+
 				'<th scope="row">' + trainNumber + '</th>' +
@@ -27,29 +23,9 @@ var view = {
 				'<td>' + trainDestination + '</td>' +
 				'<td>' + trainDeparture + '</td>' +
 				'<td>' + trainFrequency + '</td>' +
-				'<td>20</td>' +
+				'<td>' + trainTiming + '</td>' +
 				'<td>' + trainPlatform + '</td>' +
 			'</tr>'
 			);
-
-		// tableRowHead.text(trainNumber);
-		
-
-
-		// tableRow.append(tableRowHead)
-		// 		.append(tableData).text(trainLine)
-		// 		.append(tableData).text(trainDestination)
-		// 		.append(tableData).text(trainDeparture)
-		// 		.append(tableData).text(trainFrequency)
-		// 		.append(tableData).text(trainPlatform);
-		// // tableRow.append(tableData).text(trainLine);
-		// // tableRow.append(tableData).text(trainLine);
-		// // tableRow.append(tableData).text(trainDestination);
-		// // tableRow.append(tableData).text(trainDeparture);
-		// // tableRow.append(tableData).text(trainFrequency);
-		// // tableRow.append(tableData).text(trainPlatform);
-		
-		// trainScheduleBody.append(tableRow)
-
 	}
 };
