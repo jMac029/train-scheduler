@@ -18,6 +18,7 @@
  			trainFrequency = $('#train-frequency').val().trim();
  			trainPlatform = $('#train-platform').val().trim();
 
+ 			// console log all the entries for testing
  			console.log(trainNumber)
  			console.log(trainLine)
  			console.log(trainDestination)
@@ -28,6 +29,8 @@
  			// clear all the fields in the form
  			$('.form-control').val("");
 
- 		})
+ 			view.updateTrainScheduleTable();
+
+ 		});
  	}
- }
+ };
