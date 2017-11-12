@@ -66,12 +66,9 @@ var model = {
 
 	},
 
-	initialPull: false,
-
 	initialDatabasePull: () => {
 
-		database.ref().on("value", function(snapshot) {
-			if (!model.initialPull) {
+		database.ref().once("value", function(snapshot) {
 				var trains = snapshot.val();
 
 				console.log(trains);
@@ -87,8 +84,6 @@ var model = {
 					console.log(trainNumber, trainLine, trainDestination, trainDeparture, trainFrequency, trainPlatform)
 					view.updateTrainScheduleTable();
 				};
-				model.initialPull = true;
-			}
 
 		}, function(errorObject) {
       		console.log("Errors handled: " + errorObject.code);
