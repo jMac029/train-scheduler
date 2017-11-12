@@ -23,6 +23,9 @@ var trainFrequency;
 var trainTiming = 20;
 var trainPlatform;
 
+var currentTime = moment();
+console.log(currentTime);
+
 // model object with functions for pulling/pushing new data to the database
 
 var model = {
