@@ -37,32 +37,58 @@ var model = {
 		    trainFrequency: trainFrequency,
 		    trainLine: trainLine,
 		    trainNumber: trainNumber,
-		    trainPlatform: trainPlatform
+		    trainPlatform: trainPlatform,
+		    dateAdded: firebase.database.ServerValue.TIMESTAMP
 
+		});
+
+		model.pullChildFromDatabase();
+
+	},
+
+	pullChildFromDatabase: () => {
+
+		var filter = database.ref().orderByChild("dateAdded").limitToLast(1)
+
+		filter.on("child_added", function(childSnapshot) {
+
+			trainNumber = childSnapshot.val().trainNumber
+			trainLine = childSnapshot.val().trainLine
+			trainDestination = childSnapshot.val().trainDestination
+			trainDeparture = childSnapshot.val().trainDeparture
+			trainFrequency = childSnapshot.val().trainFrequency
+			trainPlatform = childSnapshot.val().trainPlatform
+
+			console.log(trainNumber, trainLine, trainDestination, trainDeparture, trainFrequency, trainPlatform)
+
+			view.updateTrainScheduleTable();;
 		});
 
 	},
 
-	pullDatabase: () => {
+	initialPull: false,
+
+	initialDatabasePull: () => {
 
 		database.ref().on("value", function(snapshot) {
+			if (!model.initialPull) {
+				var trains = snapshot.val();
 
-			var trains = snapshot.val();
+				console.log(trains);
 
-			console.log(trains);
+				for (var index in trains){
+					trainNumber = trains[index].trainNumber
+					trainLine = trains[index].trainLine
+					trainDestination = trains[index].trainDestination
+					trainDeparture = trains[index].trainDeparture
+					trainFrequency = trains[index].trainFrequency
+					trainPlatform = trains[index].trainPlatform
 
-			for (var index in trains){
-				trainNumber = trains[index].trainNumber
-				trainLine = trains[index].trainLine
-				trainDestination = trains[index].trainDestination
-				trainDeparture = trains[index].trainDeparture
-				trainFrequency = trains[index].trainFrequency
-				trainPlatform = trains[index].trainPlatform
-
-				console.log(trainNumber, trainLine, trainDestination, trainDeparture, trainFrequency, trainPlatform)
-				view.updateTrainScheduleTable();
-			};
-			// view.updateTrainScheduleTable();
+					console.log(trainNumber, trainLine, trainDestination, trainDeparture, trainFrequency, trainPlatform)
+					view.updateTrainScheduleTable();
+				};
+				model.initialPull = true;
+			}
 
 		}, function(errorObject) {
       		console.log("Errors handled: " + errorObject.code);

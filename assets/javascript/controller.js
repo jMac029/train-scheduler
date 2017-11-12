@@ -30,7 +30,7 @@
  			$('.form-control').val("");
 
  			model.pushNewTrain();
- 			view.updateTrainScheduleTable();
+ 			// view.updateTrainScheduleTable();
 
  		});
  	}

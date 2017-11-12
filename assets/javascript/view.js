@@ -5,7 +5,7 @@
 $(document).ready(function(){
 
 	controller.captureFormFields();
-	model.pullDatabase();
+	model.initialDatabasePull();
 
 });
 
