@@ -53,7 +53,7 @@ var model = {
 
 		var filter = database.ref().orderByChild("dateAdded").limitToLast(1)
 
-		filter.on("child_added", function(childSnapshot) {
+		filter.once("child_added", function(childSnapshot) {
 
 			trainNumber = childSnapshot.val().trainNumber
 			trainLine = childSnapshot.val().trainLine
@@ -64,17 +64,19 @@ var model = {
 
 			console.log(trainNumber, trainLine, trainDestination, trainDeparture, trainFrequency, trainPlatform)
 
-			view.updateTrainScheduleTable();;
+			view.updateTrainScheduleTable();
 		});
 
 	},
 
 	initialDatabasePull: () => {
 
-		database.ref().once("value", function(snapshot) {
+		database.ref().on("value", function(snapshot) {
 				var trains = snapshot.val();
 
 				console.log(trains);
+
+				$('#train-schedule-body').empty();
 
 				for (var index in trains){
 					trainNumber = trains[index].trainNumber
