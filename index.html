@@ -46,7 +46,7 @@
 				    Train Schedule
 				</div>
 				<div class="card-body">
-					<table class="table table-striped table-dark train-schedule-table">
+					<table class="table table-striped table-dark table-responsive-sm table-responsive-md train-schedule-table">
 					  	<thead class="train-schedule-head">
 						    <tr>
 						       	<th scope="col">Train #</th>
@@ -72,14 +72,14 @@
 				<div class="card-body">
 					<form novalidate>
 					  <div class="form-row">
-					    <div class="form-group col-md-6">
+					    <div class="form-group col-sm-6">
 					      <label for="train-number">Train #</label>
 					      <input type="number" class="form-control" id="train-number" min="1" max="999" placeholder="123" required/>
 					      <div class="invalid-feedback">
 					        Please provide a Train #.
 					      </div>
 					    </div>
-					    <div class="form-group col-md-6">
+					    <div class="form-group col-sm-6">
 					      <label for="train-line">Line</label>
 					      <input type="text" class="form-control" id="train-line" maxlength=20 placeholder="Express" required/>
 					      <div class="invalid-feedback">
@@ -95,21 +95,21 @@
 					      </div>
 					  </div>
 					  <div class="form-row">
-					    <div class="form-group col-md-4">
+					    <div class="form-group col-sm-4">
 					      <label for="train-departure">First Departure (24hr format)</label>
 					      <input type="number" class="form-control" id="train-departure" placeholder="0800" required/>
 					      <div class="invalid-feedback">
 					        Please provide a Train Departure Time.
 					      </div>
 					    </div>
-					    <div class="form-group col-md-4">
+					    <div class="form-group col-sm-4">
 					      <label for="train-frequency">Frequency (minutes)</label>
 					      <input type="number" class="form-control" id="train-frequency" min="1" max="1440" placeholder="30" required/>
 					      <div class="invalid-feedback">
 					        Please provide a Train Frequency.
 					      </div>
 					    </div>
-					    <div class="form-group col-md-4">
+					    <div class="form-group col-sm-4">
 					      <label for="train-platform">Platform</label>
 					      <input type="text" class="form-control" id="train-platform" maxlength=2 placeholder="2a" required/>
 					      <div class="invalid-feedback">
