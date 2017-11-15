@@ -40,32 +40,34 @@
  	// Time Calculation functions 
 
  	nextArrival: () => {
-     // First Time (pushed back 1 year to make sure it comes before current time)
-    var trainDepartureCoverted = moment(trainDeparture, "hh:mm").subtract(1, 'years');
-    // get Current Time
-    var currentTime = moment();
-    //difference between the times
-    var diffTime = moment().diff(moment(trainDepartureCoverted), "minutes");
-    // Time apart (remainder)
-    var timeRemainder = diffTime % trainFrequency;
-    //minutes until Train
-    var timeInMinutesTillTrain = trainFrequency - timeRemainder;
-    //Next Train
-    nextTrain = moment().add(timeInMinutesTillTrain, 'minutes');
-    nextTrain = moment(nextTrain).format('hh:mm A');
+	    // First Time (pushed back 1 year to make sure it comes before current time)
+	    var trainDepartureCoverted = moment(trainDeparture, "hh:mm").subtract(1, 'years');
+	    // get Current Time
+	    var currentTime = moment();
+	    //difference between the times
+	    var diffTime = moment().diff(moment(trainDepartureCoverted), "minutes");
+	    // Time apart (remainder)
+	    var timeRemainder = diffTime % trainFrequency;
+	    //minutes until Train
+	    var timeInMinutesTillTrain = trainFrequency - timeRemainder;
+	    //Next Train
+	    nextTrain = moment().add(timeInMinutesTillTrain, 'minutes');
+	    nextTrain = moment(nextTrain).format('h:mm A');
 	},
+
 	minutesAway: () => {
-     // First Time (pushed back 1 year to make sure it comes before current time)
-    var trainDepartureCoverted = moment(trainDeparture, "hh:mm").subtract(1, 'years');
-    //Current Time
-    var currentTime = moment();
-    //difference between the times
-    var diffTime = moment().diff(moment(trainDepartureCoverted), "minutes");
-    // Time apart (remainder)
-    var timeRemainder = diffTime % trainFrequency;
-    //minutes until Train
-    minutesAway = trainFrequency - timeRemainder;
-    return moment(minutesAway).format('hh:mm');
+	    // First Time (pushed back 1 year to make sure it comes before current time)
+	    var trainDepartureCoverted = moment(trainDeparture, "hh:mm").subtract(1, 'years');
+	    //Current Time
+	    var currentTime = moment();
+	    //difference between the times
+	    var diffTime = moment().diff(moment(trainDepartureCoverted), "minutes");
+	    // Time apart (remainder)
+	    var timeRemainder = diffTime % trainFrequency;
+	    //minutes until Train
+	    minutesAway = trainFrequency - timeRemainder;
+	    minutesAway = moment().startOf('day').add(minutesAway, 'minutes').format('HH:mm');
+	    return moment(minutesAway).format('HH:mm');
 	}
 
  };

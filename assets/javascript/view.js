@@ -25,13 +25,13 @@ var view = {
 				'<td>' + trainLine + '</td>' +
 				'<td>' + trainDestination + '</td>' +
 				'<td>' + nextTrain + '</td>' +
-				'<td>' + trainFrequency + '</td>' +
 				'<td>' + minutesAway + '</td>' +
+				'<td>' + moment().startOf('day').add(trainFrequency, 'minutes').format('HH:mm') + '</td>' +
 				'<td>' + trainPlatform + '</td>' +
 			'</tr>'
 			);
 	},
 	updateCurrentTime: () => {
-		$('.currentTime').text(moment().format('hh:mm:ss A'))
+		$('.currentTime').text(moment().format('h:mm:ss A'))
 	}
 };

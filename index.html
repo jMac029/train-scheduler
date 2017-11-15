@@ -34,7 +34,7 @@
 				</h1>
 			    <h1 class="display-3"><strong>Train Scheduler</strong></h1>
 			    <p class="lead">Getting you there on time</p>
-			    <p class="lead currentTime"></p>
+			    <h2 class="currentTime"></h2>
 			</div>
 
 	    </div>
@@ -53,8 +53,8 @@
 						       	<th scope="col">Line</th>
 							    <th scope="col">Destination</th>
 							    <th scope="col">Next Arrival</th>
-							    <th scope="col">Frequency (min)</th>
-							    <th scope="col">Minutes Away</th>
+							    <th scope="col">Time to Arrival</th>
+							    <th scope="col">Frequency</th>
 							    <th scope="col">Platform #</th>
 						    </tr>
 					   	</thead>
@@ -99,12 +99,12 @@
 					      <label for="train-departure">First Departure (24hr format)</label>
 					      <input type="number" class="form-control" id="train-departure" placeholder="0800" required/>
 					      <div class="invalid-feedback">
-					        Please provide a Train Departure Time.
+					        Please provide a Train's First Departure Time.
 					      </div>
 					    </div>
 					    <div class="form-group col-sm-4">
 					      <label for="train-frequency">Frequency (minutes)</label>
-					      <input type="number" class="form-control" id="train-frequency" min="1" max="1440" placeholder="30" required/>
+					      <input type="number" class="form-control" id="train-frequency" min="10" max="720" placeholder="30" required/>
 					      <div class="invalid-feedback">
 					        Please provide a Train Frequency.
 					      </div>
