@@ -68,6 +68,9 @@
 	    minutesAway = trainFrequency - timeRemainder;
 	    minutesAway = moment().startOf('day').add(minutesAway, 'minutes').format('HH:mm');
 	    return moment(minutesAway).format('HH:mm');
+	},
+	convertFrequency: () => {
+		trainFrequency = moment().startOf('day').add(trainFrequency, 'minutes').format('HH:mm');
 	}
 
  };

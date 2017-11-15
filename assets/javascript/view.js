@@ -19,6 +19,8 @@ var view = {
 
 	updateTrainScheduleTable: () => {
 
+		controller.convertFrequency();
+
 		$('#train-schedule-body').append(
 			'<tr>'+
 				'<th scope="row">' + trainNumber + '</th>' +
@@ -26,7 +28,7 @@ var view = {
 				'<td>' + trainDestination + '</td>' +
 				'<td>' + nextTrain + '</td>' +
 				'<td>' + minutesAway + '</td>' +
-				'<td>' + moment().startOf('day').add(trainFrequency, 'minutes').format('HH:mm') + '</td>' +
+				'<td>' + trainFrequency + '</td>' +
 				'<td>' + trainPlatform + '</td>' +
 			'</tr>'
 			);
