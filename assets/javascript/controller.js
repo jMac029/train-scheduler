@@ -19,12 +19,14 @@
  			trainPlatform = $('#train-platform').val().trim();
 
  			// console log all the entries for testing
- 			console.log(trainNumber)
- 			console.log(trainLine)
- 			console.log(trainDestination)
- 			console.log(trainDeparture)
- 			console.log(trainFrequency)
- 			console.log(trainPlatform)
+ 			// console.log(trainNumber)
+ 			// console.log(trainLine)
+ 			// console.log(trainDestination)
+ 			// console.log(trainDeparture)
+ 			// console.log(trainFrequency)
+ 			// console.log(trainPlatform)
+ 			controller.nextArrival();
+ 			controller.minutesAway();
 
  			// clear all the fields in the form
  			$('.form-control').val("");
@@ -33,5 +35,37 @@
  			// view.updateTrainScheduleTable();
 
  		});
- 	}
+ 	},
+
+ 	// Time Calculation functions 
+
+ 	nextArrival: () => {
+     // First Time (pushed back 1 year to make sure it comes before current time)
+    var trainDepartureCoverted = moment(trainDeparture, "hh:mm").subtract(1, 'years');
+    // get Current Time
+    var currentTime = moment();
+    //difference between the times
+    var diffTime = moment().diff(moment(trainDepartureCoverted), "minutes");
+    // Time apart (remainder)
+    var timeRemainder = diffTime % trainFrequency;
+    //minutes until Train
+    var timeInMinutesTillTrain = trainFrequency - timeRemainder;
+    //Next Train
+    nextTrain = moment().add(timeInMinutesTillTrain, 'minutes');
+    nextTrain = moment(nextTrain).format('hh:mm A');
+	},
+	minutesAway: () => {
+     // First Time (pushed back 1 year to make sure it comes before current time)
+    var trainDepartureCoverted = moment(trainDeparture, "hh:mm").subtract(1, 'years');
+    //Current Time
+    var currentTime = moment();
+    //difference between the times
+    var diffTime = moment().diff(moment(trainDepartureCoverted), "minutes");
+    // Time apart (remainder)
+    var timeRemainder = diffTime % trainFrequency;
+    //minutes until Train
+    minutesAway = trainFrequency - timeRemainder;
+    return moment(minutesAway).format('hh:mm');
+	}
+
  };

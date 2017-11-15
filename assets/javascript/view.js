@@ -6,6 +6,7 @@ $(document).ready(function(){
 
 	controller.captureFormFields();
 	model.initialDatabasePull();
+	setInterval(function() {model.initialDatabasePull()}, 60000);
 
 });
 
@@ -21,9 +22,9 @@ var view = {
 				'<th scope="row">' + trainNumber + '</th>' +
 				'<td>' + trainLine + '</td>' +
 				'<td>' + trainDestination + '</td>' +
-				'<td>' + trainDeparture + '</td>' +
+				'<td>' + nextTrain + '</td>' +
 				'<td>' + trainFrequency + '</td>' +
-				'<td>' + trainTiming + '</td>' +
+				'<td>' + minutesAway + '</td>' +
 				'<td>' + trainPlatform + '</td>' +
 			'</tr>'
 			);

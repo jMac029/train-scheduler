@@ -19,12 +19,11 @@ var trainNumber;
 var trainLine;
 var trainDestination;
 var trainDeparture;
+var nextTrain;
+var minutesAway;
 var trainFrequency;
-var trainTiming = 20;
+var trainTiming;
 var trainPlatform;
-
-var currentTime = moment();
-console.log(currentTime);
 
 // model object with functions for pulling/pushing new data to the database
 
@@ -62,7 +61,7 @@ var model = {
 			trainFrequency = childSnapshot.val().trainFrequency
 			trainPlatform = childSnapshot.val().trainPlatform
 
-			console.log(trainNumber, trainLine, trainDestination, trainDeparture, trainFrequency, trainPlatform)
+			//console.log(trainNumber, trainLine, trainDestination, trainDeparture, trainFrequency, trainPlatform)
 
 			view.updateTrainScheduleTable();
 		});
@@ -74,7 +73,7 @@ var model = {
 		database.ref().on("value", function(snapshot) {
 				var trains = snapshot.val();
 
-				console.log(trains);
+				//console.log(trains);
 
 				$('#train-schedule-body').empty();
 
@@ -86,7 +85,9 @@ var model = {
 					trainFrequency = trains[index].trainFrequency
 					trainPlatform = trains[index].trainPlatform
 
-					console.log(trainNumber, trainLine, trainDestination, trainDeparture, trainFrequency, trainPlatform)
+					//console.log(trainNumber, trainLine, trainDestination, trainDeparture, trainFrequency, trainPlatform)
+					controller.nextArrival();
+					controller.minutesAway();
 					view.updateTrainScheduleTable();
 				};
 

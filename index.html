@@ -51,41 +51,13 @@
 						       	<th scope="col">Train #</th>
 						       	<th scope="col">Line</th>
 							    <th scope="col">Destination</th>
-							    <th scope="col">Frequency</th>
 							    <th scope="col">Next Arrival</th>
+							    <th scope="col">Frequency (min)</th>
 							    <th scope="col">Minutes Away</th>
 							    <th scope="col">Platform #</th>
 						    </tr>
 					   	</thead>
-					  	   		<tbody id="train-schedule-body">
-							    <!-- <tr>
-							      	<th scope="row">456</th>
-								    <td>Amsterdam Express</td>
-								    <td>Amsterdam</td>
-								    <td>20</td>
-								    <td>0830</td>
-								    <td>20</td>
-								    <td>9a</td>
-							    </tr>
-							    <tr>
-							      	<th scope="row">789</th>
-							      	<td>Roterdam Express</td>
-								    <td>Roterdam</td>
-								    <td>45</td>
-								    <td>0915</td>
-								    <td>20</td>
-								    <td>10a</td>
-							    </tr>
-							    <tr>
-								    <th scope="row">32</th>
-								    <td>Orient Express</td>
-								    <td>Istanbul</td>
-								    <td>1440</td>
-								    <td>1000</td>
-								    <td>90</td>
-								    <td>1a</td>
-							    </tr> -->
-							  </tbody>
+					  	   		<tbody id="train-schedule-body"></tbody>
 					</table>
 				    
 				</div>
@@ -97,7 +69,7 @@
 				    Add Train to Schedule
 				</div>
 				<div class="card-body">
-					<form>
+					<form novalidate>
 					  <div class="form-row">
 					    <div class="form-group col-md-6">
 					      <label for="train-number">Train #</label>
