@@ -7,6 +7,7 @@ $(document).ready(function(){
 	controller.captureFormFields();
 	model.initialDatabasePull();
 	setInterval(function() {model.initialDatabasePull()}, 60000);
+	setInterval(function() {view.updateCurrentTime()}, 1000);
 
 });
 
@@ -28,5 +29,8 @@ var view = {
 				'<td>' + trainPlatform + '</td>' +
 			'</tr>'
 			);
+	},
+	updateCurrentTime: () => {
+		$('.currentTime').text(moment().format('hh:mm:ss A'))
 	}
 };

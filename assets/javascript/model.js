@@ -24,6 +24,8 @@ var minutesAway;
 var trainFrequency;
 var trainTiming;
 var trainPlatform;
+var currentTime = moment();
+console.log('CURRENT TIME: ' + moment(currentTime).format('hh:mm:ss A'));
 
 // model object with functions for pulling/pushing new data to the database
 
